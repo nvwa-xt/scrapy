@@ -23,10 +23,14 @@ class WooYunSpider(Spider):
      items = []
      for site in  sites:
          item = Website()
-         item['name'] = site.xpath('//td/a/text()').extract()
-         item['url']  = site.xpath('//td/a/@href').extract()
+
+         name = site.xpath('//td/a/text()').extract()
+         url  = site.xpath('//td/a/@href').extract()
+
+         item['name'] = [n.encode('utf-8') for n in name]
+         item['url']  = [u.encode('utf-8') for u in url ]
          items.append(item)
-          
+        
      return items
      
 
