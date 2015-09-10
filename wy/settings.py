@@ -14,7 +14,6 @@ BOT_NAME = 'wy'
 SPIDER_MODULES = ['wy.spiders']
 NEWSPIDER_MODULE = 'wy.spiders'
 
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'wy (+http://www.yourdomain.com)'
 
@@ -61,9 +60,9 @@ NEWSPIDER_MODULE = 'wy.spiders'
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'wy.pipelines.SomePipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'wy.pipelines.WyPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
